@@ -22,6 +22,7 @@ const Button = ({ children, clickHandler, has }) => {
 
 const Quiz = () => {
   const [index, setIndex] = useState(0);
+  const [toggleTooltip, setToggleTooltip] = useState(undefined);
   const data = useLoaderData();
   const quiz = data.data;
 
@@ -31,17 +32,27 @@ const Quiz = () => {
   const handleNextClick = () => {
     if (hasNext) {
       setIndex(index + 1);
+      setToggleTooltip(undefined);
     }
   };
 
   const handlePrevClick = () => {
     if (hasPrev) {
       setIndex(index - 1);
+      setToggleTooltip(undefined);
+    }
+  };
+
+  const handleChange = (option) => {
+    if (option === quiz.questions[index].correctAnswer) {
+      setToggleTooltip(true);
+    } else {
+      setToggleTooltip(false);
     }
   };
 
   return (
-    <section className="mt-16">
+    <section className="my-16">
       <div className="sm:container mx-auto lg:max-w-7xl px-3">
         <h2 className="text-center font-bold text-xl text-slate-600">
           Quiz on {quiz.name}
@@ -51,6 +62,8 @@ const Quiz = () => {
           question={quiz.questions[index]}
           questionNo={index + 1}
           answer={quiz.questions[index].correctAnswer}
+          toggleTooltip={toggleTooltip}
+          handleChange={handleChange}
         />
         <div className="flex justify-center">
           <Button clickHandler={handlePrevClick} has={hasPrev}>
@@ -58,12 +71,15 @@ const Quiz = () => {
             Prev
           </Button>
           {hasNext ? (
-            <Button clickHandler={handleNextClick} has={hasNext}>
+            <Button
+              clickHandler={handleNextClick}
+              has={hasNext && toggleTooltip !== undefined}
+            >
               Next
               <ArrowSmallRightIcon className="h-5 w-5 ml-1" />
             </Button>
           ) : (
-            <Button clickHandler={handleNextClick} has={true}>
+            <Button clickHandler={handleNextClick} has={ toggleTooltip !== undefined }>
               Submit
             </Button>
           )}

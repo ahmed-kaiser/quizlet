@@ -3,17 +3,8 @@ import { useState } from "react";
 import RadioButton from "./RadioButton";
 import Tooltip from "./Tooltip";
 
-const QuizQuestion = ({ question, questionNo, answer }) => {
+const QuizQuestion = ({ questionNo, question, answer, toggleTooltip, handleChange }) => {
   const [show, setShow] = useState(false);
-  const [toggleTooltip, setToggleTooltip] = useState(undefined);
-
-  const handleChange = (option) => {
-    if (option === answer) {
-      setToggleTooltip(true);
-    } else {
-      setToggleTooltip(false);
-    }
-  };
 
   const handleShowClick = () => {
     setShow(!show);
