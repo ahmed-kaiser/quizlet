@@ -25,8 +25,6 @@ const Quiz = () => {
   const data = useLoaderData();
   const quiz = data.data;
 
-  console.log(quiz);
-
   let hasPrev = index > 0;
   let hasNext = index < quiz.total - 1;
 
