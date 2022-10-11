@@ -3,7 +3,7 @@ import { useState } from "react";
 import RadioButton from "./RadioButton";
 import Tooltip from "./Tooltip";
 
-const QuizQuestion = ({ questionNo, question, answer, toggleTooltip, handleChange }) => {
+const QuizQuestion = ({ questionNo, question, answer, toggleTooltip, handleChange, totalQuiz }) => {
   const [show, setShow] = useState(false);
 
   const handleShowClick = () => {
@@ -13,8 +13,8 @@ const QuizQuestion = ({ questionNo, question, answer, toggleTooltip, handleChang
   return (
     <div className="mx-auto border border-blue-300 my-10 px-4 py-6 max-w-3xl md:min-w-3xl shadow-md rounded-md min-h-[350px] cursor-pointer">
       <div className="text-cyan-500">
-        <span className="mr-2 font-bold text-lg bg-slate-100 py-1 px-2 rounded-md relative">
-          Quiz-{questionNo}
+        <span className="mr-2 font-bold bg-slate-100 py-1 px-2 rounded-md relative">
+          Quiz-{questionNo} / {totalQuiz}
           <Tooltip toggle={toggleTooltip} />
         </span>
         <br />

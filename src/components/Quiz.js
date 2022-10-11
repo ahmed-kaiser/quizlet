@@ -5,6 +5,7 @@ import {
   ArrowSmallLeftIcon,
   ArrowSmallRightIcon,
 } from "@heroicons/react/24/solid";
+import QuizResult from "./QuizResult";
 
 const Button = ({ children, clickHandler, has }) => {
   return (
@@ -23,6 +24,9 @@ const Button = ({ children, clickHandler, has }) => {
 const Quiz = () => {
   const [index, setIndex] = useState(0);
   const [toggleTooltip, setToggleTooltip] = useState(undefined);
+  const [result, setResult] = useState(0);
+  const [showResult, setShowResult] = useState(false);
+
   const data = useLoaderData();
   const quiz = data.data;
 
@@ -32,6 +36,9 @@ const Quiz = () => {
   const handleNextClick = () => {
     if (hasNext) {
       setIndex(index + 1);
+      if (toggleTooltip === true) {
+        setResult(result + 1);
+      }
       setToggleTooltip(undefined);
     }
   };
@@ -51,39 +58,57 @@ const Quiz = () => {
     }
   };
 
+  const handleSubmitClick = () => {
+    if (toggleTooltip === true) {
+      setResult(result + 1);
+    }
+    setToggleTooltip(undefined);
+    setShowResult(true);
+  }
+
   return (
     <section className="my-16">
       <div className="sm:container mx-auto lg:max-w-7xl px-3">
         <h2 className="text-center font-bold text-xl text-slate-600">
           Quiz on {quiz.name}
         </h2>
-        <QuizQuestion
-          key={quiz.questions[index].id}
-          question={quiz.questions[index]}
-          questionNo={index + 1}
-          answer={quiz.questions[index].correctAnswer}
-          toggleTooltip={toggleTooltip}
-          handleChange={handleChange}
-        />
-        <div className="flex justify-center">
-          <Button clickHandler={handlePrevClick} has={hasPrev}>
-            <ArrowSmallLeftIcon className="h-5 w-5 mr-1" />
-            Prev
-          </Button>
-          {hasNext ? (
-            <Button
-              clickHandler={handleNextClick}
-              has={hasNext && toggleTooltip !== undefined}
-            >
-              Next
-              <ArrowSmallRightIcon className="h-5 w-5 ml-1" />
-            </Button>
-          ) : (
-            <Button clickHandler={handleNextClick} has={ toggleTooltip !== undefined }>
-              Submit
-            </Button>
-          )}
-        </div>
+        {!showResult ? (
+          <>
+            <QuizQuestion
+              key={quiz.questions[index].id}
+              question={quiz.questions[index]}
+              questionNo={index + 1}
+              answer={quiz.questions[index].correctAnswer}
+              toggleTooltip={toggleTooltip}
+              handleChange={handleChange}
+              totalQuiz={quiz.total}
+            />
+            <div className="flex justify-center">
+              <Button clickHandler={handlePrevClick} has={hasPrev}>
+                <ArrowSmallLeftIcon className="h-5 w-5 mr-1" />
+                Prev
+              </Button>
+              {hasNext ? (
+                <Button
+                  clickHandler={handleNextClick}
+                  has={hasNext && toggleTooltip !== undefined}
+                >
+                  Next
+                  <ArrowSmallRightIcon className="h-5 w-5 ml-1" />
+                </Button>
+              ) : (
+                <Button
+                  clickHandler={handleSubmitClick}
+                  has={toggleTooltip !== undefined}
+                >
+                  Submit
+                </Button>
+              )}
+            </div>
+          </>
+        ) : (
+          <QuizResult result={result} total={quiz.total} />
+        )}
       </div>
     </section>
   );
