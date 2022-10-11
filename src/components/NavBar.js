@@ -19,7 +19,7 @@ const NavBar = () => {
                         }
                     </div>
                 </div>
-                <div className={`absolute right-0 ${show? 'top-16' : 'top-[-200px]' } duration-500 ease-in-out flex flex-col sm:flex-row w-full sm:w-auto py-2 sm:py-0 -z-10 sm:-z-0 pl-3 sm:pl-0 sm:static bg-green-50`}>
+                <div className={`absolute right-0 ${show? 'top-16' : 'top-[-200px]' } -z-10 sm:z-0 duration-500 ease-in-out flex flex-col sm:flex-row w-full sm:w-auto py-2 sm:py-0 pl-3 sm:pl-0 sm:static bg-green-50`}>
                     <a className="sm:ml-4 font-medium text-slate-600 hover:text-slate-900 py-1" href="/">Home</a>
                     <a className="sm:ml-4 font-medium text-slate-600 hover:text-slate-900 py-1" href="/">Blog</a>
                 </div>
