@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-import QuizQuestion from "./QuizQuestion";
+import QuizQuestion from "../components/QuizQuestion";
 import {
   ArrowSmallLeftIcon,
   ArrowSmallRightIcon,
 } from "@heroicons/react/24/solid";
-import QuizResult from "./QuizResult";
+import QuizResult from "../components/QuizResult";
 
 const Button = ({ children, clickHandler, has }) => {
   return (
@@ -21,7 +21,7 @@ const Button = ({ children, clickHandler, has }) => {
   );
 };
 
-const Quiz = () => {
+const QuizPage = () => {
   const [index, setIndex] = useState(0);
   const [toggleTooltip, setToggleTooltip] = useState(undefined);
   const [result, setResult] = useState(0);
@@ -64,7 +64,7 @@ const Quiz = () => {
     }
     setToggleTooltip(undefined);
     setShowResult(true);
-  }
+  };
 
   return (
     <section className="my-16">
@@ -114,4 +114,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default QuizPage;

@@ -1,0 +1,11 @@
+const Footer = () => {
+  return (
+    <footer className="text-center">
+      <p className="font-serif font-bold text-slate-700 py-10 border border-t-2 border-green-100">
+        All rights reserved by @Quizlet 2022
+      </p>
+    </footer>
+  );
+};
+
+export default Footer;

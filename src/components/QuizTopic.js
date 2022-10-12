@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const QuizTopic = ({ quiz }) => {
 
   return (
-    <div className="w-80 border p-2 shadow-md rounded-md">
+    <div className="max-w-xs border p-2 shadow-md rounded-md mx-auto">
       <img src={quiz.logo} alt="" className="w-full" />
       <div className="mt-3">
         <h4 className="font-bold text-xl text-slate-600">{quiz.name}</h4>

@@ -8,19 +8,19 @@ const HomePage = () => {
     const quizTopics = data.data;
 
     return (
-        <main>
+        <>
             <Header />
-            <section className="my-16">
-                <div className="sm:container mx-auto">
+            <section className="my-16 mb-24">
+                <div className="sm:container mx-auto lg:max-w-7xl px-3">
                     <h2 className="pb-16 font-bold text-2xl text-center">Quiz Topic</h2>
-                    <div className="grid grid-cols-4 gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {
                             quizTopics.map(quiz => <QuizTopic key={quiz.id} quiz={quiz} />)
                         }
                     </div>
                 </div>
             </section>
-        </main>
+        </>
     );
 };
 

@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Quiz from '../components/Quiz';
 import HomePage from '../layout/HomePage';
+import QuizPage from '../layout/QuizPage';
 import Root from '../layout/Root';
 
 const Router = () => {
@@ -18,7 +18,7 @@ const Router = () => {
                 },
                 {
                     path: 'quiz/:quizId',
-                    element: <Quiz />,
+                    element: <QuizPage />,
                     loader: async({ params }) => {
                         return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
                     }

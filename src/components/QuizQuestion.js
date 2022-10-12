@@ -3,7 +3,14 @@ import { useState } from "react";
 import RadioButton from "./RadioButton";
 import Tooltip from "./Tooltip";
 
-const QuizQuestion = ({ questionNo, question, answer, toggleTooltip, handleChange, totalQuiz }) => {
+const QuizQuestion = ({
+  questionNo,
+  question,
+  answer,
+  toggleTooltip,
+  handleChange,
+  totalQuiz,
+}) => {
   const [show, setShow] = useState(false);
 
   const handleShowClick = () => {
