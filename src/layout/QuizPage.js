@@ -67,8 +67,6 @@ const QuizPage = () => {
     setShowResult(true);
   };
 
-  console.log(result);
-
   return (
     <section className="my-16">
       <div className="sm:container mx-auto lg:max-w-7xl px-5">
