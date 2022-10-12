@@ -24,7 +24,7 @@ const Button = ({ children, clickHandler, has }) => {
 const QuizPage = () => {
   const [index, setIndex] = useState(0);
   const [toggleTooltip, setToggleTooltip] = useState(undefined);
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState([]);
   const [showResult, setShowResult] = useState(false);
 
   const data = useLoaderData();
@@ -37,7 +37,7 @@ const QuizPage = () => {
     if (hasNext) {
       setIndex(index + 1);
       if (toggleTooltip === true) {
-        setResult(result + 1);
+          setResult([...result, 1]);
       }
       setToggleTooltip(undefined);
     }
@@ -47,6 +47,8 @@ const QuizPage = () => {
     if (hasPrev) {
       setIndex(index - 1);
       setToggleTooltip(undefined);
+      result.pop();
+      setResult([...result]);
     }
   };
 
@@ -60,11 +62,12 @@ const QuizPage = () => {
 
   const handleSubmitClick = () => {
     if (toggleTooltip === true) {
-      setResult(result + 1);
+      setResult([...result, 1]);
     }
-    setToggleTooltip(undefined);
     setShowResult(true);
   };
+
+  console.log(result);
 
   return (
     <section className="my-16">
