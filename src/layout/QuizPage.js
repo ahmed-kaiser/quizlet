@@ -68,7 +68,7 @@ const QuizPage = () => {
 
   return (
     <section className="my-16">
-      <div className="sm:container mx-auto lg:max-w-7xl px-3">
+      <div className="sm:container mx-auto lg:max-w-7xl px-5">
         <h2 className="text-center font-bold text-xl text-slate-600">
           Quiz of {quiz.name}
         </h2>

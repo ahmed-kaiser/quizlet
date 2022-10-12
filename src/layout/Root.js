@@ -3,15 +3,15 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
 const Root = () => {
-    return (
-        <>
-            <NavBar/>
-            <main className="min-h-[100vh] overflow-hidden">
-                <Outlet/>
-            </main>
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <NavBar />
+      <main className="min-h-[100vh] overflow-hidden">
+        <Outlet />
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default Root;

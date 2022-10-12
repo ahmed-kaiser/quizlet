@@ -1,6 +1,6 @@
 const BlogPage = () => {
   return (
-    <section className="sm:container mx-auto lg:max-w-4xl px-3 pt-10 pb-32 ">
+    <section className="sm:container mx-auto lg:max-w-4xl px-5 pt-10 pb-32 ">
       <h2 className="font-bold text-xl border-b-2 border-green-50 pb-2 text-cyan-600">
         Blog Post
       </h2>
@@ -41,7 +41,17 @@ const BlogPage = () => {
           <h3 className="font-semibold text-lg text-slate-600">
             <span className="text-cyan-600">3.</span> About useRef() hooks.
           </h3>
-          <p className="my-2 pl-2"><b>useRef()</b> hook is used to create persisted mutable values (also known as references or refs), as well as access DOM elements. useRef(initialValue) is a built-in React hook that accepts one argument as the initial value and returns a <b>reference</b>. A reference is an object having a special property current. There are 2 rules to remember about references - first, The value of the reference is persisted (stays the same) between component re-renderings and second, Updating a reference doesn't trigger a component re-rendering.</p>
+          <p className="my-2 pl-2">
+            <b>useRef()</b> hook is used to create persisted mutable values
+            (also known as references or refs), as well as access DOM elements.
+            useRef(initialValue) is a built-in React hook that accepts one
+            argument as the initial value and returns a <b>reference</b>. A
+            reference is an object having a special property current. There are
+            2 rules to remember about references - first, The value of the
+            reference is persisted (stays the same) between component
+            re-renderings and second, Updating a reference doesn't trigger a
+            component re-rendering.
+          </p>
         </div>
       </div>
     </section>

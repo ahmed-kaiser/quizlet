@@ -11,9 +11,9 @@ const StatisticsPage = () => {
   }
 
   return (
-    <section className="sm:container mx-auto lg:max-w-7xl px-3 pt-10 pb-20">
+    <section className="sm:container mx-auto lg:max-w-7xl px-5 pt-10 pb-20">
       <div className="max-w-sm mx-auto relative -z-40">
-      <h2 className="text-center py-4 font-semibold text-lg">Quiz Info</h2>
+        <h2 className="text-center py-4 font-semibold text-lg">Quiz Info</h2>
         <BarChart
           width={320}
           height={300}

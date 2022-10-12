@@ -2,7 +2,6 @@ import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
 
 const QuizTopic = ({ quiz }) => {
-
   return (
     <div className="max-w-xs border p-2 shadow-md rounded-md mx-auto">
       <img src={quiz.logo} alt="" className="w-full bg-green-50 rounded-md" />
