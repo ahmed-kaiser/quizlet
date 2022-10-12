@@ -33,12 +33,18 @@ const QuizPage = () => {
   let hasPrev = index > 0;
   let hasNext = index < quiz.total - 1;
 
+  const updateResult = () => {
+    if (toggleTooltip === true) {
+      setResult([...result, 1]);
+    } else {
+      setResult([...result, 0]);
+    }
+  }
+
   const handleNextClick = () => {
     if (hasNext) {
       setIndex(index + 1);
-      if (toggleTooltip === true) {
-          setResult([...result, 1]);
-      }
+      updateResult();
       setToggleTooltip(undefined);
     }
   };
@@ -61,11 +67,11 @@ const QuizPage = () => {
   };
 
   const handleSubmitClick = () => {
-    if (toggleTooltip === true) {
-      setResult([...result, 1]);
-    }
+    updateResult();
     setShowResult(true);
   };
+
+  console.log(result);
 
   return (
     <section className="my-16">
