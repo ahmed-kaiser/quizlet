@@ -6,7 +6,7 @@ const Root = () => {
     return (
         <>
             <NavBar/>
-            <main className="min-h-[100vh]">
+            <main className="min-h-[100vh] overflow-hidden">
                 <Outlet/>
             </main>
             <Footer />

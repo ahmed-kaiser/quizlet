@@ -4,6 +4,7 @@ import ErrorPage from '../layout/ErrorPage';
 import HomePage from '../layout/HomePage';
 import QuizPage from '../layout/QuizPage';
 import Root from '../layout/Root';
+import StatisticsPage from '../layout/StatisticsPage';
 
 const Router = () => {
     const router = createBrowserRouter([
@@ -24,6 +25,13 @@ const Router = () => {
                     element: <QuizPage />,
                     loader: async({ params }) => {
                         return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
+                    }
+                },
+                {
+                    path: '/statistics',
+                    element: <StatisticsPage />,
+                    loader: async() => {
+                        return await fetch('https://openapi.programming-hero.com/api/quiz')
                     }
                 },
                 {

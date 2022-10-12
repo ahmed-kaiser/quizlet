@@ -9,8 +9,8 @@ const NavBar = () => {
     setShow(!show);
   };
 
-  const navStyle1 = "sm:ml-4 font-medium text-slate-600 hover:text-slate-900 py-1 underline";
-  const navStyle2 = "sm:ml-4 font-medium text-slate-600 hover:text-slate-900 py-1";
+  const linkStyle1 = "sm:ml-4 font-medium text-slate-600 hover:text-slate-900 py-1 underline";
+  const linkStyle2 = "sm:ml-4 font-medium text-slate-600 hover:text-slate-900 py-1";
 
   return (
     <nav className="bg-green-50 sticky top-0">
@@ -28,14 +28,20 @@ const NavBar = () => {
         >
           <NavLink
             to="/"
-            className={({isActive}) => isActive? navStyle1 : navStyle2}
+            className={({isActive}) => isActive? linkStyle1 : linkStyle2}
             end
           >
             Home
           </NavLink>
           <NavLink
+            to="/statistics"
+            className={({isActive}) => isActive? linkStyle1 : linkStyle2}
+          >
+            Statistics
+          </NavLink>
+          <NavLink
             to="/blog"
-            className={({isActive}) => isActive? navStyle1 : navStyle2}
+            className={({isActive}) => isActive? linkStyle1 : linkStyle2}
           >
             Blog
           </NavLink>
