@@ -25,7 +25,7 @@ const QuizQuestion = ({
           <Tooltip toggle={toggleTooltip} />
         </span>
         <br />
-        <p className="mt-2 font-semibold text-xl">{question.question}</p>
+        <p className="mt-2 font-semibold text-xl tracking-wide py-2">{question.question}</p>
       </div>
       <div className="mt-3 pl-2 mb-8">
         {question.options.map((option) => (

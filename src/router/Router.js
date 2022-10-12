@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import BlogPage from '../layout/BlogPage';
 import ErrorPage from '../layout/ErrorPage';
 import HomePage from '../layout/HomePage';
 import QuizPage from '../layout/QuizPage';
@@ -24,6 +25,10 @@ const Router = () => {
                     loader: async({ params }) => {
                         return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
                     }
+                },
+                {
+                    path: '/blog',
+                    element: <BlogPage />
                 }
             ]
         }

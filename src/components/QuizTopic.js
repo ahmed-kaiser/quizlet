@@ -5,7 +5,7 @@ const QuizTopic = ({ quiz }) => {
 
   return (
     <div className="max-w-xs border p-2 shadow-md rounded-md mx-auto">
-      <img src={quiz.logo} alt="" className="w-full" />
+      <img src={quiz.logo} alt="" className="w-full bg-green-50 rounded-md" />
       <div className="mt-3">
         <h4 className="font-bold text-xl text-slate-600">{quiz.name}</h4>
         <p className="py-1">

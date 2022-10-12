@@ -1,6 +1,6 @@
 const RadioButton = ({ questionId, option, handleChange }) => {
   return (
-    <div className="box-border p-2 my-1 flex items-center border hover:rounded-lg hover:shadow-md duration-200">
+    <div className="box-border p-2 my-1 flex items-center border hover:shadow-md duration-200 rounded-sm">
       <input
         type="radio"
         name={questionId}
