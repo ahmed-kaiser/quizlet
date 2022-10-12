@@ -20,7 +20,7 @@ const QuizQuestion = ({
   return (
     <div className="mx-auto border border-blue-300 my-10 px-4 py-6 max-w-3xl md:min-w-3xl shadow-md rounded-md min-h-[350px] cursor-pointer">
       <div className="text-cyan-500">
-        <span className="mr-2 font-bold bg-slate-100 py-1 px-2 rounded-md relative">
+        <span className="mr-2 font-bold bg-slate-100 py-1 px-2 rounded-md relative -z-10">
           Quiz-{questionNo} / {totalQuiz}
           <Tooltip toggle={toggleTooltip} />
         </span>

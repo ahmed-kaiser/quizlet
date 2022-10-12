@@ -1,6 +1,7 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import logo from '../Images/logo.png'
 
 const NavBar = () => {
   const [show, setShow] = useState(false);
@@ -14,9 +15,9 @@ const NavBar = () => {
 
   return (
     <nav className="bg-green-50 sticky top-0">
-      <div className="sm:container mx-auto lg:max-w-7xl flex items-center justify-between h-16 relative  px-3">
+      <div className="sm:container mx-auto lg:max-w-7xl flex items-center justify-between h-16 px-3">
         <div className="grow flex items-center justify-between sm:grow-0">
-          <img src="./images/logo.png" alt="logo" className="w-36 h-12" />
+          <img src={logo} alt="logo" className="w-36 h-12" />
           <div className="h-6 w-6 sm:hidden" onClick={menuBarClickHandler}>
             {show ? <XMarkIcon /> : <Bars3Icon />}
           </div>

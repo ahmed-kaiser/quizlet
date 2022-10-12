@@ -39,7 +39,7 @@ const BlogPage = () => {
         </div>
         <div className="my-4 bg-slate-100 px-3 py-4 rounded-sm">
           <h3 className="font-semibold text-lg text-slate-600">
-            <span className="text-cyan-600">3.</span> About useRef hooks.
+            <span className="text-cyan-600">3.</span> About useRef() hooks.
           </h3>
           <p className="my-2 pl-2"><b>useRef()</b> hook is used to create persisted mutable values (also known as references or refs), as well as access DOM elements. useRef(initialValue) is a built-in React hook that accepts one argument as the initial value and returns a <b>reference</b>. A reference is an object having a special property current. There are 2 rules to remember about references - first, The value of the reference is persisted (stays the same) between component re-renderings and second, Updating a reference doesn't trigger a component re-rendering.</p>
         </div>

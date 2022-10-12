@@ -13,7 +13,7 @@ const QuizTopic = ({ quiz }) => {
           {quiz.total}
         </p>
         <Link
-          to={`quiz/${quiz.id}`}
+          to={`/quiz/${quiz.id}`}
           className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:to-blue-600 flex justify-center items-center cursor-pointer text-white rounded py-1 mt-2"
         >
           Start

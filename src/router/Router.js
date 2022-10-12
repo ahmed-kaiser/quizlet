@@ -21,7 +21,7 @@ const Router = () => {
                     }
                 },
                 {
-                    path: 'quiz/:quizId',
+                    path: '/quiz/:quizId',
                     element: <QuizPage />,
                     loader: async({ params }) => {
                         return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
